@@ -73,7 +73,7 @@ footer {
   width: 100%;
   max-width: 768px;
   line-height: 2em;
-  margin: auto;
+  margin: 0 auto;
   padding-bottom: 30px;
   text-align: center; }
   footer * {
@@ -286,12 +286,6 @@ pre {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-
-.signoff {
-  margin-top: 30px; }
-  .signoff img {
-    width: 20px; }
-
 .paging a {
   opacity: 0.25; }
 .paging a:hover {

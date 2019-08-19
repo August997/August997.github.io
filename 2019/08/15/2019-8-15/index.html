@@ -1,51 +1,146 @@
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-    <title>Hexo博客搭建和部署 - August&#39;s Blog</title>
-    <link href="/images/fav.png" rel="shortcut icon">
-<link href rel="alternate" type="application/rss+xml">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/highlight.css">
-<link rel="stylesheet" href="/css/responsive.css">
-<script src="/js/jquery.js"></script>
-<script src="/js/basics.js"></script>
-<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
-<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<!DOCTYPE html>
+<html lang=en>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="1.配置git环境和node.js git的安装与配置：https://www.cnblogs.com/yszr/p/8317147.html node的安装与配置：https://www.runoob.com/nodejs/nodejs-install-setup.html 其中最重要的一步就是node的npm安装，记得要添加到全局环境（npm可以理解为node的工具包的安装器）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客搭建和部署">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/2019-8-15/index.html">
+<meta property="og:site_name" content="August997&#39;s Blog">
+<meta property="og:description" content="1.配置git环境和node.js git的安装与配置：https://www.cnblogs.com/yszr/p/8317147.html node的安装与配置：https://www.runoob.com/nodejs/nodejs-install-setup.html 其中最重要的一步就是node的npm安装，记得要添加到全局环境（npm可以理解为node的工具包的安装器）">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-15T09:39:55.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo博客搭建和部署">
+<meta name="twitter:description" content="1.配置git环境和node.js git的安装与配置：https://www.cnblogs.com/yszr/p/8317147.html node的安装与配置：https://www.runoob.com/nodejs/nodejs-install-setup.html 其中最重要的一步就是node的npm安装，记得要添加到全局环境（npm可以理解为node的工具包的安装器）">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Hexo博客搭建和部署</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
 
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/08/15/2019-8-15/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/08/15/2019-8-15/&text=Hexo博客搭建和部署"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/08/15/2019-8-15/&is_video=false&description=Hexo博客搭建和部署"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo博客搭建和部署&body=Check out this article: http://yoursite.com/2019/08/15/2019-8-15/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/08/15/2019-8-15/&name=Hexo博客搭建和部署&description=&lt;h1 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h1&gt;&lt;p&gt;配置git环境和node.js&lt;/p&gt;
+&lt;p&gt;git的安装与配置：&lt;a href=&#34;https://www.cnblogs.com/yszr/p/8317147.html&#34; title=&#34;git的安装与配置&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.cnblogs.com/yszr/p/8317147.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;node的安装与配置：&lt;a href=&#34;https://www.runoob.com/nodejs/nodejs-install-setup.html&#34; title=&#34;node的安装与配置&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.runoob.com/nodejs/nodejs-install-setup.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其中最重要的一步就是node的npm安装，记得要添加到全局环境（npm可以理解为node的工具包的安装器）&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-  </head>
-  <body>
-    <header>
-  <a id="go-back-home" href="/"><img src="/images/scribble.png" alt="Home" width="53" height="59"></a>
-  <p>August997</p>
-  <p>Comfort is for the dead.</p>
-  <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp---- 柴可夫斯基·静</p>
-</header>
-
-    <div id="container">
-      <div class="block">
-  
-    <a class="main" href="/">Home</a>
-  
-    <a class="main" href="/about">About</a>
-  
-    <a class="main" href="mailto:873791930@qq.com">Email</a>
-  
-    <a class="main" href="https://github.com/August997">Github</a>
-  
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1"><span class="toc-number">1.</span> <span class="toc-text">1.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2"><span class="toc-number">2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3"><span class="toc-number">3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4"><span class="toc-number">4.</span> <span class="toc-text">4.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5"><span class="toc-number">5.</span> <span class="toc-text">5.</span></a></li></ol>
+    </div>
+  </span>
 </div>
 
-      <section class="paging">
-  
-  
-</section>
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hexo博客搭建和部署
+    </h1>
 
-      <div class="content">
-        <section class="post">
-          <h1>
-            <div class="date">2019-08-15</div>
-            Hexo博客搭建和部署
-          </h1>
-          <h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>配置git环境和node.js</p>
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">August997's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-08-15T02:59:47.000Z" itemprop="datePublished">2019-08-15</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>配置git环境和node.js</p>
 <p>git的安装与配置：<a href="https://www.cnblogs.com/yszr/p/8317147.html" title="git的安装与配置" target="_blank" rel="noopener">https://www.cnblogs.com/yszr/p/8317147.html</a></p>
 <p>node的安装与配置：<a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" title="node的安装与配置" target="_blank" rel="noopener">https://www.runoob.com/nodejs/nodejs-install-setup.html</a></p>
 <p>其中最重要的一步就是node的npm安装，记得要添加到全局环境（npm可以理解为node的工具包的安装器）</p>
@@ -85,27 +180,124 @@ deploy:
 </li>
 </ol>
 
-        </section>
-      </div>
-      
-      <div class="block">
-  
-    <a class="main" href="/">Home</a>
-  
-    <a class="main" href="/about">About</a>
-  
-    <a class="main" href="mailto:873791930@qq.com">Email</a>
-  
-    <a class="main" href="https://github.com/August997">Github</a>
-  
-</div>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1"><span class="toc-number">1.</span> <span class="toc-text">1.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2"><span class="toc-number">2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3"><span class="toc-number">3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4"><span class="toc-number">4.</span> <span class="toc-text">4.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5"><span class="toc-number">5.</span> <span class="toc-text">5.</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/08/15/2019-8-15/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/08/15/2019-8-15/&text=Hexo博客搭建和部署"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/08/15/2019-8-15/&is_video=false&description=Hexo博客搭建和部署"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo博客搭建和部署&body=Check out this article: http://yoursite.com/2019/08/15/2019-8-15/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/08/15/2019-8-15/&title=Hexo博客搭建和部署"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/08/15/2019-8-15/&name=Hexo博客搭建和部署&description=&lt;h1 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h1&gt;&lt;p&gt;配置git环境和node.js&lt;/p&gt;
+&lt;p&gt;git的安装与配置：&lt;a href=&#34;https://www.cnblogs.com/yszr/p/8317147.html&#34; title=&#34;git的安装与配置&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.cnblogs.com/yszr/p/8317147.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;node的安装与配置：&lt;a href=&#34;https://www.runoob.com/nodejs/nodejs-install-setup.html&#34; title=&#34;node的安装与配置&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.runoob.com/nodejs/nodejs-install-setup.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其中最重要的一步就是node的npm安装，记得要添加到全局环境（npm可以理解为node的工具包的安装器）&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
-    <footer>
-  <span class="muted">Copyright &copy; August997.</span><br>
-  <br>
-  <img src="/images/scribble2.png" alt="scribble">
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 August997
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-  </body>
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
 </html>
